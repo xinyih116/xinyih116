@@ -7,7 +7,7 @@ body {
 }
 
 .wrapper {
-  max-width: 800px;
+  max-width: 600px; 
   margin: 0 auto;
   padding: 20px;
   text-align: center;
@@ -21,7 +21,7 @@ body {
 }
 
 img {
-  width: 300px;
+  max-width: 100%; /* Ensure image fits within its container */
   height: auto;
   border-radius: 50%;
   margin-bottom: 20px;
@@ -47,64 +47,4 @@ img {
 .social-links li {
   display: inline;
   margin-right: 10px;
-}
-
-.social-links li a {
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-.social-links li a:hover {
-  color: #6c5ce7;
-}
-
-.gallery-title {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #6fa9e2;
-  width: 100%;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
-}
-
-.image {
-  margin: 10px;
-  background-color: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.image img {
-  width: 250px;
-  height: auto;
-}
-
-.button-container {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.return-button {
-  padding: 10px 20px;
-  background-color: #6fa9e2;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.return-button:hover {
-  background-color: #5b92cb;
 }
