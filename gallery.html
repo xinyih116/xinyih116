@@ -9,13 +9,14 @@
     /* CSS for image carousel */
     .carousel {
       position: relative;
-      max-width: 100%;
+      max-width: 80%; /* Adjust the maximum width of the carousel */
+      margin: 0 auto; /* Center the carousel horizontally */
       overflow: hidden;
     }
     .carousel img {
       display: block;
-      width: 100%;
-      height: auto;
+      width: 100%; /* Make the images fill the width of the carousel */
+      height: auto; /* Maintain the aspect ratio */
     }
     .prev, .next {
       position: absolute;
@@ -25,12 +26,13 @@
       color: white;
       padding: 10px;
       cursor: pointer;
+      z-index: 1; /* Ensure the buttons appear above the image */
     }
     .prev {
-      left: 0;
+      left: 10px; /* Adjust the distance from the left */
     }
     .next {
-      right: 0;
+      right: 10px; /* Adjust the distance from the right */
     }
   </style>
 </head>
