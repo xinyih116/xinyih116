@@ -1,19 +1,30 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun DOM Exploration</title>
+    <style>
+        body {
+            transition: background-color 0.5s ease-in-out;
+        }
+    </style>
+</head>
 <body>
     <h1>Exploring the DOM</h1>
 
     <h2>Count Down: <span id="count">20</span></h2>
     <button onclick="updateCount()">Next</button>
 
-    <!-- Button to toggle countdown visibility -->
-    <button onclick="toggleCountdown()">Toggle Countdown</button>
+    <!-- Button to change background color -->
+    <button onclick="changeBackgroundColor()">Change Color</button>
 
     <script>
         var i = 20;
 
         function updateCount() {
             i = i - 1;
-            countobj = document.getElementById("count");
+            var countobj = document.getElementById("count");
             console.log("Updating object: " + countobj);
 
             // Calculate color based on count
@@ -30,14 +41,10 @@
             }
         }
 
-        // Function to toggle countdown visibility
-        function toggleCountdown() {
-            var countdown = document.getElementById("count");
-            if (countdown.style.display === "none") {
-                countdown.style.display = "inline";
-            } else {
-                countdown.style.display = "none";
-            }
+        // Function to change background color randomly
+        function changeBackgroundColor() {
+            var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor = randomColor;
         }
     </script>
 </body>
