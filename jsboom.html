@@ -27,11 +27,11 @@
             var countobj = document.getElementById("count");
             console.log("Updating object: " + countobj);
 
-            // Calculate color based on count
+            // Calculate red component based on count
             var redValue = 255 - (i * (255 / 20)); // Adjusting for 20 steps from white (255,255,255) to red (255,0,0)
 
             // Set background color to a shade of red
-            document.body.style.backgroundColor = "rgb(255, " + redValue + ", " + redValue + ")";
+            document.body.style.backgroundColor = "rgb(" + redValue + ", 0, 0)";
 
             if (i === 0) {
                 // Perform something special when i reaches 0
