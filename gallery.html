@@ -5,34 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cinnamoroll Gallery</title>
   <link rel="stylesheet" href="style.css"> 
+  <style>
+    /* CSS for image carousel */
+    .carousel {
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    .carousel img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .prev {
+      left: 0;
+    }
+    .next {
+      right: 0;
+    }
+  </style>
 </head>
 <body>
-
-<header>
-</header>
 
 <main>
   <h1 class="gallery-title">Cinnamoroll Photo Gallery</h1>
 
-  <div class="gallery">
-    <div class="image">
-      <img src="files/1.jpg" alt="Cinnamoroll 1">
-    </div>
-    <div class="image">
-      <img src="files/2.jpg" alt="Cinnamoroll 2">
-    </div>
-    <div class="image">
-      <img src="files/3.jpg" alt="Cinnamoroll 3">
-    </div>
-    <div class="image">
-      <img src="files/4.jpg" alt="Cinnamoroll 4">
-    </div>
-    <div class="image">
-      <img src="files/5.jpg" alt="Cinnamoroll 5">
-    </div>
-    <div class="image">
-      <img src="files/6.jpg" alt="Cinnamoroll 6">
-    </div>
+  <div class="carousel">
+    <img id="carousel-image" src="files/1.jpg" alt="Cinnamoroll">
+    <a class="prev" onclick="changeSlide(-1)">&#10094; Prev</a>
+    <a class="next" onclick="changeSlide(1)">Next &#10095;</a>
   </div>
 
   <div class="button-container">
@@ -42,6 +52,30 @@
 
 <footer>
 </footer>
+
+<script>
+  // JavaScript for image carousel
+  var currentSlide = 0;
+  var images = [
+    'files/1.jpg',
+    'files/2.jpg',
+    'files/3.jpg',
+    'files/4.jpg',
+    'files/5.jpg',
+    'files/6.jpg'
+  ];
+  var totalSlides = images.length;
+
+  function changeSlide(direction) {
+    currentSlide += direction;
+    if (currentSlide >= totalSlides) {
+      currentSlide = 0;
+    } else if (currentSlide < 0) {
+      currentSlide = totalSlides - 1;
+    }
+    document.getElementById('carousel-image').src = images[currentSlide];
+  }
+</script>
 
 </body>
 </html>
