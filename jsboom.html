@@ -5,6 +5,9 @@
     <h2>Count Down: <span id="count">20</span></h2>
     <button onclick="updateCount()">Next</button>
 
+    <!-- Button to toggle countdown visibility -->
+    <button onclick="toggleCountdown()">Toggle Countdown</button>
+
     <script>
         var i = 20;
 
@@ -24,6 +27,16 @@
                 countobj.innerHTML = "<b>BOOM!</b>";
             } else {
                 countobj.innerHTML = "<b>" + i + "</b>";
+            }
+        }
+
+        // Function to toggle countdown visibility
+        function toggleCountdown() {
+            var countdown = document.getElementById("count");
+            if (countdown.style.display === "none") {
+                countdown.style.display = "inline";
+            } else {
+                countdown.style.display = "none";
             }
         }
     </script>
