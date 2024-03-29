@@ -14,10 +14,10 @@
             console.log("Updating object: " + countobj);
 
             // Calculate color based on count
-            var colorValue = i * (255 / 20); // Adjusting for 20 steps from green (255,0,0) to red (255,0,0)
+            var redValue = 255 - (i * (255 / 20)); // Adjusting for 20 steps from green (0,255,0) to red (255,0,0)
 
-            // Set background color
-            document.body.style.backgroundColor = "rgb(255, " + colorValue + ", " + colorValue + ")";
+            // Set background color to a shade of red
+            document.body.style.backgroundColor = "rgb(" + redValue + ", 0, 0)";
 
             if (i === 0) {
                 // Perform something special when i reaches 0
