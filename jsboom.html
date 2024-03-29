@@ -14,11 +14,10 @@
             console.log("Updating object: " + countobj);
 
             // Calculate color based on count
-            var lightness = 90 + (i * (60 / 20)); // Lightness value from 90 (light lavender) to 150 (royal purple)
-            var hue = 260; // Hue value for purple color
+            var redValue = 255 - (i * (255 / 20)); // Adjusting for 20 steps from green (0,255,0) to red (255,0,0)
 
-            // Set background color to a shade of purple
-            document.body.style.backgroundColor = "hsl(" + hue + ", 100%, " + lightness + "%)";
+            // Set background color to a shade of red
+            document.body.style.backgroundColor = "rgb(" + redValue + ", 0, 0)";
 
             if (i === 0) {
                 // Perform something special when i reaches 0
