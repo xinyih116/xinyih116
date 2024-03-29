@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fun DOM Exploration</title>
     <style>
-        .colorSquare {
-            width: 100px;
-            height: 100px;
-            margin: 10px;
-            border: 2px solid black;
-            display: inline-block;
+        body {
+            transition: background-color 0.5s ease-in-out;
         }
     </style>
 </head>
@@ -20,10 +16,8 @@
     <h2>Count Down: <span id="count">20</span></h2>
     <button onclick="updateCount()">Next</button>
 
-    <!-- Button to add random color square -->
-    <button onclick="addColorSquare()">Add Color Square</button>
-
-    <div id="colorSquares"></div>
+    <!-- Button to change background color -->
+    <button onclick="changeBackgroundColor()">Change Color</button>
 
     <script>
         var i = 20;
@@ -47,14 +41,10 @@
             }
         }
 
-        // Function to add random color square
-        function addColorSquare() {
-            var colorSquares = document.getElementById("colorSquares");
-            var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-            var newColorSquare = document.createElement("div");
-            newColorSquare.className = "colorSquare";
-            newColorSquare.style.backgroundColor = randomColor;
-            colorSquares.appendChild(newColorSquare);
+        // Function to change background color randomly
+        function changeBackgroundColor() {
+            var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor = randomColor;
         }
     </script>
 </body>
