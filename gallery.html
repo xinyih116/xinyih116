@@ -9,7 +9,7 @@
     /* CSS for image carousel */
     .carousel {
       position: relative;
-      max-width: 40%; /* Adjust the maximum width of the carousel */
+      max-width: 60%; /* Adjust the maximum width of the carousel */
       margin: 0 auto; /* Center the carousel horizontally */
       overflow: hidden;
     }
@@ -17,6 +17,7 @@
       display: block;
       width: 100%; /* Make the images fill the width of the carousel */
       height: auto; /* Maintain the aspect ratio */
+      cursor: pointer; /* Change cursor to pointer when hovering over the image */
     }
     .prev, .next {
       position: absolute;
@@ -24,15 +25,15 @@
       transform: translateY(-50%);
       background-color: rgba(0, 0, 0, 0.5);
       color: white;
-      padding: 3px; /* Adjust the padding */
+      padding: 5px; /* Adjust the padding */
       cursor: pointer;
       z-index: 1; /* Ensure the buttons appear above the image */
     }
     .prev {
-      left: 3px; /* Adjust the distance from the left */
+      left: 5px; /* Adjust the distance from the left */
     }
     .next {
-      right: 3px; /* Adjust the distance from the right */
+      right: 5px; /* Adjust the distance from the right */
     }
   </style>
 </head>
@@ -41,7 +42,7 @@
 <main>
   <h1 class="gallery-title">Cinnamoroll Photo Gallery</h1>
 
-  <div class="carousel">
+  <div class="carousel" onclick="toggleAutoPlay()">
     <img id="carousel-image" src="files/1.jpg" alt="Cinnamoroll">
     <a class="prev" onclick="changeSlide(-1)">&#10094; Prev</a>
     <a class="next" onclick="changeSlide(1)">Next &#10095;</a>
@@ -67,6 +68,8 @@
     'files/6.jpg'
   ];
   var totalSlides = images.length;
+  var autoPlay = true;
+  var timer;
 
   function changeSlide(direction) {
     currentSlide += direction;
@@ -77,6 +80,19 @@
     }
     document.getElementById('carousel-image').src = images[currentSlide];
   }
+
+  function toggleAutoPlay() {
+    if (autoPlay) {
+      clearInterval(timer);
+      autoPlay = false;
+    } else {
+      timer = setInterval(function() { changeSlide(1); }, 3000); // Automatically change slide every 3 seconds
+      autoPlay = true;
+    }
+  }
+
+  // Start automatic slide change
+  timer = setInterval(function() { if (autoPlay) changeSlide(1); }, 3000); // Automatically change slide every 3 seconds
 </script>
 
 </body>
