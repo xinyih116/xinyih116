@@ -13,11 +13,12 @@
             countobj = document.getElementById("count");
             console.log("Updating object: " + countobj);
 
-
-            var colorValue = i * (255 / 20); 
+            // Calculate color based on count
+            var lightness = 80 + (i * (70 / 20)); // Lightness value from 80 (light lavender) to 150 (royal purple)
+            var hue = 260; // Hue value for purple color
 
             // Set background color to a shade of purple
-            document.body.style.backgroundColor = "rgb(" + colorValue + ", 0, " + colorValue + ")";
+            document.body.style.backgroundColor = "hsl(" + hue + ", 100%, " + lightness + "%)";
 
             if (i === 0) {
                 // Perform something special when i reaches 0
