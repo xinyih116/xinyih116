@@ -12,6 +12,13 @@
             i = i - 1;
             countobj = document.getElementById("count");
             console.log("Updating object: " + countobj);
+
+            // Calculate color based on count
+            var colorValue = i * (255 / 20); // Adjusting for 20 steps from green (255,0,0) to red (255,0,0)
+
+            // Set background color
+            document.body.style.backgroundColor = "rgb(255, " + colorValue + ", " + colorValue + ")";
+
             if (i === 0) {
                 // Perform something special when i reaches 0
                 countobj.innerHTML = "<b>BOOM!</b>";
