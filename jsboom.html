@@ -9,14 +9,16 @@
         var i = 20;
 
         function updateCount() {
-            i = i - 1;
-            countobj = document.getElementById("count");
-            console.log("Updating object: " + countobj);
-            if (i === 0) {
-                // Perform something special when i reaches 0
-                countobj.innerHTML = "<b>BOOM!</b>";
-            } else {
-                countobj.innerHTML = "<b>" + i + "</b>";
+            if (i > 0) {
+                i = i - 1;
+                countobj = document.getElementById("count");
+                console.log("Updating object: " + countobj);
+                if (i === 0) {
+                    // Perform something special when i reaches 0
+                    countobj.innerHTML = "<b>BOOM!</b>";
+                } else {
+                    countobj.innerHTML = "<b>" + i + "</b>";
+                }
             }
         }
     </script>
